@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="A3.css">  
+<script src="A3.js"></script>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function(){
+        $(":button").click(function(){
+            $("#error0").show().text("Please refer to the error messages under input fields").delay(5000).fadeOut(5000);   
+        });
+    });
+</script> 
+</head>
+
+<body>     
+    <input type="checkbox" id="theme" value="High Contrast Mode">
+    <header>
+        <h1>CHI Travel Insurance Application Form</h1>
+    </header>
+
+    <nav>
+        <li class="menuItem" onclick="f1()"><a href="#travellersDetails">Traveller's Details</a>
+            <ul>
+                <li onclick="focust1()"><a href="#ts1">Traveller 1</a></li>
+                <li onclick="focust2()"><a href="#ts2">Traveller 2</a></li>
+            </ul>
+        </li>
+        <li class="menuItem" onclick="f2()"><a href="#childrensDetails">Children's Details</a>
+            <ul>
+                <li onclick="focusc1()"><a href="#cs1">Child 1</a></li>
+                <li onclick="focusc2()"><a href="#cs2">Child 2</a></li>
+                <li onclick="focusc3()"><a href="#cs3">Child 3</a></li>
+                <li onclick="focusc4()"><a href="#cs4">Child 4</a></li>
+            </ul>
+        </li>
+        <li class="menuItem" onclick="f3()"><a href="#contactDetails">Traveller's Contact Details</a>
+            <ul>
+                <li onclick="focuscd1()"><a href="#address">Address</a></li>
+                <li onclick="focuscd2()"><a href="#email">Email</a></li>
+                <li onclick="focuscd3()"><a href="#phone3">Mobile</a></li>
+            </ul>
+        </li>
+        <li class="menuItem" onclick="f4()"><a href="#travelDetails">Travel Details </a>
+            <ul>
+                <li onclick="focustd1()"><a href="#dd">Departure Date</a></li>
+                <li onclick="focustd2()"><a href="#rd">Return Date</a></li>
+                <li onclick="focustd3()"><a href="#pt">Period of Travel</a></li>
+                <li onclick="focustd4()"><a href="#md">Major Destinations</a></li>
+            </ul>
+        </li>
+        <li class="menuItem" onclick="f5()"><a href="#coverRequired">Cover Required </a>
+            <ul>
+                <li onclick="focustc()"><a href="#tc">Type of Cover</a></li>
+            </ul>
+        </li>
+        <li class="menuItem" onclick="f6()"><a href="#planSelected">Plan Selected </a>
+            <ul>
+                <li onclick="focusp1()"><a href="#premium1">International</a></li>
+                <li onclick="focusp2()"><a href="#premium2">Frequent Traveller</a></li>
+                <li onclick="focusp3()"><a href="#premium3">Australia Only</a></li>
+                <li onclick="focusp4()"><a href="#premium4">Non-Resident</a></li>
+                <li onclick="focusp5()"><a href="#premium5">Non-Medical</a></li>
+            </ul>
+        </li>
+        <li class="menuItem" onclick="f7()"><a href="#additionalCosts">Additional Costs </a>
+            <ul>
+                <li onclick="focusac()"><a href="#condition1">Pre-Existing Medical Conditions</a></li>
+            </ul>
+        </li>
+    </nav>
+    
+
+    <fieldset id="travellersDetails">             
+        <legend>Traveller's Details</legend>
+        <div class="field">
+            <label>Insured's Surname</label>
+            <input id="ts1" type="text" pattern="[A-Za-z]{1,}" required>            
+        </div> 
+        <div class="error" id="errort1"></div>  
+        <div class="field">
+            <label>First Name</label>
+            <input id="tf1" type="text" pattern="[A-Za-z]{1,}" required>
+        </div> 
+        <div class="error" id="errort2"></div> 
+        <div class="field">
+            <label>Title</label>
+            <select id="tt1" name="title" required>
+                <option></option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="ms">Ms</option>
+                <option value="dr">Dr</option>
+            </select>
+        </div> 
+        <div class="error" id="errort3"></div> 
+        <div class="field">
+            <label>Date of Birth</label>
+            <input id="tb1" type="date" required>
+        </div>   
+        <div class="error" id="errort4"></div>         
+        <div class="field">
+            <label>Insured's Surname</label>
+            <input id="ts2" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errort5"></div> 
+        <div class="field">
+            <label>First Name</label>
+            <input id="tf2" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errort6"></div> 
+        <div class="field">
+            <label>Title</label>
+            <select id="tt2" name="title">
+                <option></option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="ms">Ms</option>
+                <option value="dr">Dr</option>
+            </select>
+        </div> 
+        <div class="error" id="errort7"></div> 
+        <div class="field">
+            <label>Date of Birth</label>
+            <input id="tb2" type="date">
+        </div> 
+        <div class="error" id="errort8"></div> 
+        <br>
+        <div class="field">
+            <label>Validity Check</label>
+            <input type="button" id="button1a" value="Check" onclick="validity1()">
+        </div>    
+        <div class="field">
+            <label>Next Step</label>
+            <input type="submit" id="button1b" value="Next" onclick="f2()">
+        </div>    
+    </fieldset> 
+    
+
+    <fieldset id="childrensDetails">
+        <legend>Children's Details</legend>
+        <div class="field">
+            <label>Insured's Surname</label>
+            <input id="cs1" type="text" pattern="[A-Za-z]{1,}" required>
+        </div> 
+        <div class="error" id="errorc1"></div>
+        <div class="field">
+            <label>First Name</label>
+            <input id="cf1" type="text" pattern="[A-Za-z]{1,}" required>
+        </div> 
+        <div class="error" id="errorc2"></div>
+        <div class="field">
+            <label>Title</label>
+            <select id="ct1" name="title" required>
+                <option></option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="ms">Ms</option>
+                <option value="dr">Dr</option>
+            </select>
+        </div> 
+        <div class="error" id="errorc3"></div>
+        <div class="field">
+            <label>Date of Birth</label>
+            <input id="cb1" type="date" required>
+        </div> 
+        <div class="error" id="errorc4"></div>
+        <div class="field">
+            <label>Insured's Surname</label>
+            <input id="cs2" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errorc5"></div>
+        <div class="field">
+            <label>First Name</label>
+            <input id="cf2" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errorc6"></div>
+        <div class="field">
+            <label>Title</label>
+            <select id="ct2" name="title">
+                <option></option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="ms">Ms</option>
+                <option value="dr">Dr</option>
+            </select>
+        </div> 
+        <div class="error" id="errorc7"></div>
+        <div class="field">
+            <label>Date of Birth</label>
+            <input id="cb2" type="date">
+        </div> 
+        <div class="error" id="errorc8"></div>
+        <div class="field">
+            <label>Insured's Surname</label>
+            <input id="cs3" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errorc9"></div>
+        <div class="field">
+            <label>First Name</label>
+            <input id="cf3" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errorc10"></div>
+        <div class="field">
+            <label>Title</label>
+            <select id="ct3" name="title">
+                <option></option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="ms">Ms</option>
+                <option value="dr">Dr</option>
+            </select>
+        </div> 
+        <div class="error" id="errorc11"></div>
+        <div class="field">
+            <label>Date of Birth</label>
+            <input id="cb3" type="date">
+        </div>         
+        <div class="error" id="errorc12"></div>
+        <div class="field">
+            <label>Insured's Surname</label>
+            <input id="cs4" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errorc13"></div>
+        <div class="field">
+            <label>First Name</label>
+            <input id="cf4" type="text" pattern="[A-Za-z]{1,}">
+        </div> 
+        <div class="error" id="errorc14"></div>
+        <div class="field">
+            <label>Title</label>
+            <select id="ct4" name="title">
+                <option></option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="ms">Ms</option>
+                <option value="dr">Dr</option>
+            </select>
+        </div> 
+        <div class="error" id="errorc15"></div>
+        <div class="field">
+            <label>Date of Birth</label>
+            <input id="cb4" type="date">
+        </div> 
+        <div class="error" id="errorc16"></div>
+        <div class="field">
+            <label>Check Validity</label>
+            <input type="button" id="button2a" value="Check" onclick="validity2()">
+        </div> 
+        <div class="field">
+            <label>Next Step</label>
+            <input type="submit" id="button2b" value="Next" onclick="f3()">
+        </div>       
+    </fieldset>
+    
+
+    <fieldset id="contactDetails">
+        <legend>Traveller's Contact Details</legend>
+        <div class="field">
+            <label>Residential Address</label>
+            <input id="address" type="text" required>
+        </div> 
+        <div class="error" id="errorcd1"></div>
+        <div class="field">
+            <label>Suburb</label>
+            <input id="suburb" type="text" required>
+        </div> 
+        <div class="error" id="errorcd2"></div>
+        <div class="field">
+            <label>State</label>
+            <input id="state" type="text" required>
+        </div>   
+        <div class="error" id="errorcd3"></div>
+        <div class="field">
+            <label>Postcode</label>
+            <input id="postcode" type="text" pattern="[0-9]{4}" required>
+        </div> 
+        <div class="error" id="errorcd4"></div>
+        <div class="field">
+            <label>Email</label>
+            <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+        </div>       
+        <div class="error" id="errorcd5"></div>      
+        <div class="field">
+            <label>Phone (After Hours)</label>
+            <input id="phone1" type="number" pattern="[0-9]">
+        </div> 
+        <div class="error" id="errorcd6"></div>
+        <div class="field">
+            <label>Phone (Bussiness Hours)</label>
+            <input id="phone2" type="number" pattern="[0-9]">
+        </div> 
+        <div class="error" id="errorcd7"></div>
+        <div class="field">
+            <label>Phone (Mobile)</label>
+            <input id="phone3" type="number" pattern="[0-9]" required>
+        </div>     
+        <div class="error" id="errorcd8"></div>
+        <div class="field">
+            <label>Check Validity</label>
+            <input type="button" id="button3a" value="Check" onclick="validity3()">
+        </div>       
+        <div class="field">
+            <label>Next Step</label>
+            <input type="submit" id="button3b" value="Next" onclick="f4()">
+        </div>                    
+    </fieldset> 
+    
+
+    <fieldset id="travelDetails">
+        <legend>Travel Details</legend>
+        <div class="field">
+            <label>Departure Date</label>
+            <input id="dd" type="date" required>
+        </div> 
+        <div class="error" id="errortd1"></div>   
+        <div class="field">
+            <label>Return Date / Expiry Date</label>
+            <input id="rd" type="date" required>
+        </div> 
+        <div class="error" id="errortd2"></div>  
+        <div class="field">
+            <label>Period of Travel (Days/Months)</label>
+            <input id="pt" type="text" required>
+        </div> 
+        <div class="error" id="errortd3"></div>  
+        <div class="field">
+            <label>Major Destinations</label>
+            <input id="md" type="text" required>
+        </div> 
+        <div class="error" id="errortd4"></div>  
+        <br>
+        <div class="field">
+            <label>Check Validity</label>
+            <input type="button" id="button4a" value="Check" onclick="validity4()">
+            </div>  
+        <div class="field">
+            <label>Next Step</label>
+            <input type="submit" id="button4b" value="Next" onclick="f5()">
+        </div>  
+    </fieldset>
+    <fieldset id="coverRequired">
+        <legend>Cover Required</legend>
+        <div class="field">
+            <label>Type of Cover</label>
+            <select id="covertype" name="cover" required>
+                <option></option>
+                <option value="single">Single</option>
+                <option value="duo">Duo</option>
+                <option value="family">Family</option>
+                <option value="individual">Individual</option>
+            </select>
+        </div> 
+        <div class="error" id="errorcr"></div>  
+        <div class="field">
+            <label>Check Validity</label>
+            <input type="button" id="button5a" value="Check" onclick="validity5()">
+            </div>  
+        <div class="field">
+            <label>Next Step</label>
+            <input type="submit" id="button5b" value="Next" onclick="f6()">
+        </div>  
+    </fieldset> 
+    
+    <fieldset id="planSelected">
+        <legend>Plan Selected</legend>
+        <div class="field">
+            <label>International</label>
+            <select id="premium1" name="premium">
+                <option></option>
+                <option value="topPlus">Top Plus</option>
+                <option value="top">Top</option>
+                <option value="mid">Mid</option>
+                <option value="basic">Basic</option>
+                <option value="budget">Budget</option>
+            </select>
+            <div class="premium">Base Premium $</div>
+        </div> 
+        <div class="error" id="errorp1"></div>  
+        <div class="field">
+            <label>Frequent Traveller</label>
+            <select id="premium2" name="premium">
+                <option></option>
+                <option value="topPlus">Top Plus</option>
+                <option value="mid">Mid</option>
+                <option value="basic">Basic</option>
+            </select>
+            <div class="premium">Base Premium $</div>
+        </div> 
+        <div class="error" id="errorp2"></div>
+        <div class="field">
+            <label>Australia Only</label>
+            <select id="premium3" name="premium">
+                <option></option>
+                <option value="mid">Mid</option>
+                <option value="basic">Basic</option>
+            </select>
+            <div class="premium">Base Premium $</div>
+        </div> 
+        <div class="error" id="errorp3"></div>
+        <div class="field">
+            <label>None Resident</label>
+            <select id="premium4" name="premium">
+                <option></option>
+                <option value="mid">Mid</option>
+                <option value="basic">Basic</option>
+            </select>
+            <div class="premium">Base Premium $</div>
+        </div> 
+        <div class="error" id="errorp4"></div>
+        <div class="field">
+            <label>None Medic</label>
+            <select id="premium5" name="premium">
+                <option></option>
+                <option value="topPlus">Top Plus</option>
+                <option value="mid">Mid</option>
+                <option value="basic">Basic</option>
+            </select>
+            <div class="premium">Base Premium $</div>
+        </div> 
+        <div class="error" id="errorp5"></div>
+        <div class="field">
+            <label>Check Validity</label>
+            <input type="button" id="button6a" value="Check" onclick="validity6()">
+        </div>  
+        <div class="field">
+            <label>Next Step</label>
+            <input type="submit" id="button6b" value="Next" onclick="f7()">
+        </div>  
+    </fieldset> 
+    
+    <fieldset id="additionalCosts">
+        <legend>Additional Costs</legend>
+        <div class="conditions">
+            <h3>Pre-extsting Medical Conditions</h3>
+            <p>You are not automatically covered for Pre-existing Medical Conditions. Please refer to the definition of, and details about, Pre-extsting Medical Conditions on pages 7 & 8 and pages 24 & 25 of the PDS.</p>
+        </div>
+        <div class="field">
+            <label>Do you have pre-existing medical conditions?</label>
+            <select id="condition1" name="choice" required>
+                <option></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div> 
+        <div class="error" id="errorac1"></div>
+        <div class="field">
+            <label>Are all of your Pre-existing Medical Conditions listed under the heading 'Pre-existing medical conditions which we may cover with no additional premium payable' on pages 24 & 25? (not applicable to the Top Plus Non-Medical, Mid Non-Medical or Basic Non-Medical plans)</label>
+            <select id="condition2" name="choice">
+                <option></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div> 
+        <div class="error" id="errorac2"></div>
+        <div class="field">
+            <label>If your application for cover of your Pre-existing Medical Conditions is approved, what is your medical assessment number?</label>
+            <input id="condition3" type="text" pattern="[0-9]">
+        </div>         
+        <div class="error" id="errorac3"></div>
+        <div class="field">
+            <label>Agree to terms and conditions</label>
+            <input id="checkit" type="checkbox" onclick="enabler()">
+        </div>         
+        <div class="field">
+            <label>Check Validity</label>
+            <input type="button" id="button7a" value="Check" onclick="validity7()">
+        </div>
+        <div class="field">
+            <label>Submit</label>
+            <input type="submit" id="submitme" value="Submit" disabled>
+        </div>
+    </fieldset>
+
+    <footer>
+        <strong>2018 CHI Travel Insurance Pty Ltd All Rights Reserved</strong>
+    </footer>
+
+    <div id="error0"></div>
+</body>
+</html>

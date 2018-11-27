@@ -1,0 +1,298 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px; /* equal to 100% or 1em*/    
+}
+
+body {
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+header {
+    width:100%;
+    background:orange;
+    min-height: 5em;
+    text-align: center;
+    border: 2px solid orange;
+    border-radius: 10px;
+    padding:auto;
+    margin-bottom: 30px;    
+    color:white;
+}
+
+nav {
+    width:100%;
+    min-height:3em;    
+    background: linear-gradient(orange,rgb(255, 242, 231));
+    border: 2px solid orange;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.menuItem{
+    display:flex;
+    Padding:2px;
+    text-align: left;
+    vertical-align: middle;
+    width:14.2857%;    
+    float:left;    
+    color:black;    
+}
+
+a:link, a:active, a:visited{
+    color:grey;
+    text-decoration: underline;
+}
+
+ul {
+    position: absolute;    
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+nav li:hover > ul {
+    display: block;
+    width: 20%;
+    color: blACK;
+    border: 1px solid orange;
+    border-radius: 10px;
+    padding: 20px;
+    line-height:200%;
+    background: linear-gradient(orange,rgb(255, 242, 231));
+}
+
+fieldset {
+    width: 100%;
+    border: 2px solid orange;
+    border-radius: 10px;
+    background-color: rgb(255, 241, 227);
+    padding: 20px;
+}
+
+.field {
+    width: 100%;
+    position: relative;
+}
+
+legend {
+    font-size: 2em;
+}
+
+label {
+    float: left;
+    width: 25%;
+    text-align: right;
+    padding: 12px 20px;
+    margin: 8px 0;        
+}
+
+input {
+    font-size: 1em;
+    float: left;
+    width: 75%;
+    padding: 12px 0;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;    
+    text-align: left;    
+    background-color: white;
+}
+
+input:valid, select:valid {
+    border: 2px solid green;
+}
+
+input:invalid, select:invalid {
+    border: 2px solid red;
+}
+
+select {
+    font-size: 1em;
+    float: left;
+    width: 150px;
+    padding: 12px 0;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;    
+    text-align: left;
+    background-color: white;
+}
+
+input:focus, select:focus {
+    background-color: rgb(255, 255, 218);
+}
+
+.premium {
+    float: left;
+    width: 30%;
+    text-align: left;
+    padding: 12px 20px;
+    margin: 8px 0px;    
+}
+
+
+
+
+
+#checkit {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+input[type=button], input[type=submit] {
+    width: 100px;
+    float: left;
+    background-color: orange;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+input[type=button]:hover, input[type=submit]:hover {
+    background-color: rgb(250, 187, 71);
+}
+
+#submitme {
+    width: 100px;
+    float: left;
+    background-color: grey;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    text-align: center;        
+}
+
+.error {
+    width: 100%;
+    float: left;
+    padding-left:25%;
+    font-size: 0.8em;
+    color: red;       
+}
+
+#error0 {
+    position: fixed;
+    bottom: 0;   
+    left: 20%; 
+    width: 60%;    
+    min-height: 130px;
+    padding: 50px;   
+    text-align: center;
+    font-size: 1.5em;
+    color: red;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;      
+    background-color: rgb(255, 255, 218);   
+    display:none;
+}
+
+.conditions {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    padding: 50px 20px; 
+}
+
+
+.field:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    width:100%;
+    background: linear-gradient(orange,rgb(255, 242, 231));
+    min-height: 3em;
+    font-size: 1em;
+    text-align: center;
+    border: 2px solid orange;
+    padding:auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    color:black;    
+}
+
+
+@media only screen and (max-width: 800px) {
+    body {
+        width:100%;
+    }
+    nav{
+        min-height:15em;
+    }
+    nav li:hover > ul {
+        display: none;
+    }
+    .menuItem{
+        width:100%;
+        height:2em;
+        text-align: center;
+    }
+    label {
+        width: 100%;
+        text-align: left;
+    }    
+    input {
+        width: 100%;
+    }    
+    .error {
+        width: 100%;
+    }    
+}
+
+
+/*===========================
+    High contrast mode 
+===========================*/
+#theme {
+    position:fixed;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 80px;
+    height: 80px;   
+    opacity: 1; 
+}
+
+#theme::before { 
+    content: "High Contrast Mode";
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#theme:checked ~ * {
+    background:rgb(50, 50, 50); 
+    color: grey;   
+}
+
+#theme:checked ~ fieldset input{
+    background:darkgray;    
+}
+
+#theme:checked ~ fieldset select{
+    background:darkgray;    
+}
+
+#theme:checked ~ fieldset label{
+    color: white;  
+}
